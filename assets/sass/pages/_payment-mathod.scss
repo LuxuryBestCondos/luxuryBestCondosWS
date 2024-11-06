@@ -1,0 +1,105 @@
+.payment {
+    padding: 16.4rem 0 13rem 0;
+}
+
+.p-section {
+    .p-common {
+        background-color: $dark-white;
+        border-radius: 1rem;
+        padding: 5rem;
+    }
+    .p-details {
+        padding: 3.7rem 5rem 5rem 5rem;
+    }
+    .p-mathod {
+        padding-left: 3.6rem;
+    }
+}
+
+.p-details {
+    .heading {
+        font-weight: 500;
+        margin-bottom: 3rem;
+    }
+    .table-bordered {
+        border-radius: 1rem;
+        border-color: transparent;
+        overflow: hidden;
+        margin-bottom: 0;
+        box-shadow: 0 1rem 2rem 0 rgba($theme-one, 0.06);
+
+        .p-row {
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba($theme-one, 0.1);
+            }
+        }
+        .p-data {
+            padding: 1.5rem 4rem;
+            &:not(:last-child) {
+                border-right: 1px solid rgba($theme-one, 0.1);
+            }
+        }
+        .table-text {
+            font-size: 2rem;
+            line-height: 1;
+            color: $heading-color;
+        }
+    }
+}
+.p-category {
+    @include flex($direction: column, $gap: 2rem, $align: unset);
+
+    .p-box {
+        position: relative;
+        .primary-btn {
+            width: 100%;
+            justify-content: center;
+            svg {
+                stroke: $color-white;
+            }
+        }
+        &:not(:last-child){
+            &::after {
+                position: absolute;
+                content: "";
+                top: 0;
+                right: 0;
+                height: 2.2rem;
+                width: 2.2rem;
+                background: url(../assets/img/section-img/flat-icon.png);
+                opacity: 0;
+                
+            }
+        }
+       
+        &:focus-within{
+            &::after{
+                opacity: 1;
+            }
+        }
+    }
+    
+
+    .p-img {
+        position: absolute;
+        width: 11.3rem;
+        left: 50%;
+        top: 50%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        background-color: $color-white;
+        img {
+            width: 100%;
+        }
+    }
+    .form-control {
+        border-radius: 10rem;
+        font-size: 1.6rem;
+        padding: 2rem 3rem;
+        &:focus {
+            box-shadow: none;
+            border-color: $theme-one;
+        }
+    }
+}
+

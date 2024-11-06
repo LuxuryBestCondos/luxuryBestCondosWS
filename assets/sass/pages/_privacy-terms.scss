@@ -1,0 +1,25 @@
+.privacy-policy{
+    padding-bottom: 13rem;
+
+    .section-list{
+        margin-top: 0;
+        gap: 0;
+    }
+    .privacy-content{
+        &:not(:last-child){
+            margin-bottom: 4rem;
+        }
+        .privacy-title{
+            margin-bottom:1.6rem;
+        }
+        .privacy-desc{
+            &:not(:last-child){
+                margin-bottom: 2.2rem;
+            } 
+        }
+    }
+}
+
+
+
+  

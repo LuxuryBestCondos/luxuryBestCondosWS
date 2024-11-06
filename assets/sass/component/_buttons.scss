@@ -1,0 +1,53 @@
+// primary-btn-------------------->
+.primary-btn {
+    @include btnPrimary();
+    font-family: $outfit;
+    font-weight: 600;
+    gap: 0.8rem;
+    transition: 500ms;
+    z-index: 1;
+
+    svg{
+        transition: all .3s;
+    }
+   
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150%;
+        height: 150%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        background: $heading-color;
+        transition-duration: 700ms;
+        transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+        z-index: -1;
+        
+        
+    }
+
+    &:hover{
+        
+        svg{
+            transform: translateX(5px);
+        }
+        &::after{
+            bottom: -50%;
+        }
+    }
+}
+
+.primary-btn-two{
+    background: $theme-two;
+    &::after{
+        background: $heading-color;
+    }
+}
+.primary-btn-three{
+    background: $theme-three;
+    
+}
+

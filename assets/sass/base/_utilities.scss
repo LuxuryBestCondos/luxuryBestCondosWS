@@ -1,0 +1,292 @@
+// centering-items-------------------->
+.center-item {
+    text-align: center;
+}
+
+// gutter-gap-------------------->
+.g-4 {
+    --bs-gutter-x: 2.4rem;
+    --bs-gutter-y:2.4rem;
+}
+
+// section-padding-------------------->
+.section-padding {
+    padding-top: 13rem;
+}
+
+// section-head-------------------->
+.section-head {
+    @include flex($justify: space-between);
+}
+.section-title {
+    margin-bottom: 5rem;
+}
+
+// subtitle
+.subtitle {
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding: 0.5rem 2rem;
+    color: $theme-one;
+    background: $dark-white;
+    border: 1px solid rgba($theme-one, 0.18);
+    border-radius: 50rem;
+}
+.subtitle-two {
+    color: $theme-two;
+    background: rgba($theme-two, 0.1);
+    border: 1px solid rgba($theme-two, 0.18);
+}
+
+.subtitle-three {
+    color: $theme-three;
+    background: rgba($theme-three, 0.04);
+    border: 1px solid rgba($theme-three, 0.18);
+}
+
+// form-select-------------------->
+.nice-select {
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    height: auto;
+    font-family: $outfit !important;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 3.3rem;
+    padding: 0;
+
+    &::after {
+        border-bottom: 1px solid $heading-color;
+        border-right: 1px solid $heading-color;
+        height: 8px;
+        width: 8px;
+    }
+
+    .option {
+        width: 18rem;
+        font-size: 1.6rem;
+        &.selected {
+            font-weight: 500;
+        }
+    }
+}
+
+// section-list-------------------->
+.section-list {
+    @include flex($direction: column, $gap: 1.4rem, $align: unset);
+}
+
+// img-absolute-content-------------------->
+.img-content {
+    position: absolute;
+    text-align: left;
+    padding: 3rem 10rem 3rem 3rem;
+    border-radius: 2rem;
+    background: $theme-one;
+    bottom: 6rem;
+    left: 6rem;
+
+    .content-head {
+        @include flex($gap: 1rem);
+        .content-icon {
+            transition: all 0.3s;
+        }
+    }
+    p,
+    h3,
+    a {
+        color: $color-white;
+    }
+    .content-heading {
+        font-weight: 600;
+    }
+    .content-img {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        animation: textrotate 10s linear infinite;
+    }
+    &:hover {
+        .content-icon {
+            transform: translate(5px, -5px);
+        }
+    }
+}
+.img-content-two {
+    text-align: left;
+    background: $color-white;
+    position: absolute;
+    top: 5.7rem;
+    right: -7rem;
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 1rem 6rem 0 rgba(0, 0, 0, 0.14);
+
+    .review-item {
+        @include flex($gap: 1rem);
+        padding-bottom: 1rem;
+        .inner-text {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: $paragraph-color;
+        }
+    }
+}
+
+//counter-------------------->
+.counterup-section {
+    @include grid($grid: repeat(4, minmax(0, 1fr)), $gap: 0rem);
+
+    .counter-wrapper {
+        @include flex($direction: column, $gap: 3.7rem);
+        flex-basis: 25%;
+        .devider {
+            width: 8rem;
+            height: 3px;
+            background: $color-yellow;
+        }
+        .counter-text,
+        .wrapper-detail {
+            color: $color-white;
+        }
+        .counter-text {
+            font-size: clamp(4rem, 4vw + 1rem, 7.5rem);
+        }
+        .wrapper-detail {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+// pagination-------------------->
+.blog-pagination {
+    @include flex($gap: 3rem);
+    margin-top: 5rem;
+    .peg-btn,
+    .pagination-num {
+        font-family: $outfit;
+        font-size: 1.6rem;
+    }
+    .section-list {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .pagination-num {
+        @include flex($justify: center);
+        height: 4.9rem;
+        width: 4.9rem;
+        border-radius: 50%;
+        border: 1px solid rgba($theme-one, 0.1);
+        cursor: pointer;
+        transition: all 0.2s linear;
+        &:hover {
+            background: $theme-one;
+            color: $color-white;
+        }
+    }
+}
+
+// social-items-------------------->
+.social-item {
+    @include flex($gap: 1.5rem);
+    .social-icon {
+        @include flex($justify: center);
+        height: 4.6rem;
+        width: 4.6rem;
+        border: 1px solid rgba($theme-one, 0.18);
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: $theme-one;
+            z-index: -1;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: all 0.3s linear;
+        }
+        svg {
+            color: $theme-one;
+            transition: all 0.3s linear;
+        }
+    }
+    .icon-box {
+        .social-icon{
+            transition: all .3s;
+        }
+        &:hover {
+            .social-icon {
+                transform: scale(1.2);
+                svg {
+                    color: $color-white;
+                   
+                }
+
+                &::after {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+
+// selectbox-items-------------------->
+.slectbox-body {
+    .country-options {
+        position: absolute;
+        width: 12rem;
+        background-color: $color-white;
+        padding: 0px 0;
+        margin-top: 13px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        border: 1px solid rgba($color-white, 0.18);
+        border-radius: 0.5rem;
+        z-index: 20;
+        overflow: hidden;
+
+        .all-option {
+            cursor: pointer;
+            padding: 9px 16px;
+
+            .option-text {
+                font-size: 1.6rem;
+                color: $heading-color;
+                transition: all 0.1s;
+            }
+            &:hover {
+                background: rgba($theme-one, 0.18);
+
+                .option-text {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    & .clickAway {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: block;
+    }
+}
+
+
+// backto-top-------------------->
+.backto-top {
+    position: fixed;
+    z-index: 5;
+    bottom: 15rem;
+    right: 10rem;
+    animation: bounce 2s infinite alternate;
+    cursor: pointer;
+}

@@ -1,0 +1,138 @@
+.accordion-button {
+    @include flex($justify: space-between, $gap: 3rem);
+    &:focus {
+        border: none;
+        outline: 0;
+        box-shadow: none;
+    }
+    &:not(.collapsed) {
+        background-color: transparent;
+        box-shadow: none;
+        .btn-icon{
+            transform: rotate(-180deg);
+        }
+
+    }
+    .btn-icon{
+        transition: all .3s;
+    }
+    &:after {
+        display: none;
+    }
+}
+
+
+.faq {
+    .g-4 {
+        --bs-gutter-y: 6rem;
+    }
+
+    .faq-img {
+        position: relative;
+        .img-content {
+            background: $theme-one;
+        }
+        .img-content-item {
+            border-radius: 10rem;
+            padding: 1.5rem 3rem;
+            left: 20rem;
+            p {
+                color: $color-white;
+            }
+        }
+        .img-content-two {
+            top: 10rem;
+            right: unset;
+            background: $theme-two;
+        }
+    }
+
+    
+    .accordion-collapse {
+        background: $theme-one;
+        transition: all 0.3s;
+
+        .faq-body {
+            padding: 0 4rem 4rem 9.3rem;
+            .faq-detail {
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.faq-two {
+    .faq-img {
+        .img-content {
+            background: $heading-color;
+        }
+    }
+
+    .faq-btn {
+        &:not(.collapsed) {
+            background: $theme-three;
+
+            .btn-icon {
+                svg {
+                    color: $theme-three;
+                }
+            }
+        }
+
+        .btn-icon {
+            background: rgba($color: $theme-three, $alpha: 0.1);
+
+            svg {
+                fill: currentColor;
+                color: $theme-three;
+            }
+        }
+    }
+
+    .accordion-collapse {
+        background: $theme-three;
+    }
+}
+
+.faq-btn {
+    padding: 2.2rem 4rem;
+    color: $heading-color;
+    &:not(.collapsed) {
+        background: $theme-one;
+        color: $color-white;
+
+        .btn-icon {
+            transform: rotate(180deg);
+            background: $color-white;
+
+            svg {
+                fill: currentColor;
+                color: $theme-one;
+            }
+        }
+    }
+
+    .faq-ques {
+        @include flex($gap: 1.6rem);
+        font-size: clamp(1.8rem, 4vw + 0.5rem, 3rem);
+        line-height: clamp(2.6rem, 4vw + 0.5rem, 4rem);
+        font-weight: 500;
+        font-family: $garamonde;
+    }
+
+    .btn-icon {
+        position: absolute;
+        right: 4rem;
+        bottom: 2.5rem;
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        background: rgba($color: $theme-one, $alpha: 0.1);
+        @include flex($justify: center);
+        svg {
+            fill: currentColor;
+            color: $theme-one;
+        }
+    }
+}
+

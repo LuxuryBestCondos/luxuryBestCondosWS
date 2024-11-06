@@ -1,0 +1,277 @@
+.blog-section{
+
+    .blog-pagination{
+        justify-content: center;
+    }
+}
+
+// blog-sidebar-------------------->
+.blog-sidebar {
+    padding: 13rem 0;
+
+    .section-list {
+        margin-top: 0;
+    }
+    
+
+    .blog-post {
+        .post-title {
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+        .list-item {
+            color: $paragraph-color;
+            font-family: $outfit;
+            font-weight: 400;
+        }
+    }
+
+    .popular-post {
+        .section-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .list-item {
+            padding: 1rem 1.8rem;
+            border: 1px solid rgba($theme-one, 0.1);
+            font-size: 1.4rem;
+            border-radius: 10rem;
+            transition: all 0.3s;
+            &:hover {
+                background: $theme-one;
+                color: $color-white;
+            }
+        }
+        .popular-item-section {
+            .post-title {
+                margin-bottom: 2rem;
+                font-family: $outfit;
+                font-weight: 400;
+            }
+            @include flex($justify: space-between);
+        }
+    }
+    .social-item {
+        flex-direction: row;
+        gap: 1.5rem;
+        svg {
+            stroke: currentColor;
+            color: rgba($theme-one, 0.6);
+            transition: all 0.2s;
+        }
+        .list-icon {
+            &:hover {
+                svg {
+                    color: $theme-one;
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+
+.blog-post-section {
+    .g-4 {
+        --bs-gutter-y: 6rem;
+    }
+
+    .search-btn {
+        @include flex($justify: spacec-between, $gap: 1rem);
+        border: 1px solid rgba($theme-one, 0.1);
+        padding: 0rem 2.5rem;
+        border-radius: 1rem;
+        height: 6.5rem;
+    }
+    input {
+        flex: 1 1 0%;
+        font-size: 1.6rem;
+        font-weight: 500;
+        height: 100%;
+        &::placeholder {
+            color: #B1B1B1;
+            font-weight: 400;
+        }
+    }
+    .category-post {
+        .section-list {
+            margin-top: 0;
+            gap: 2.5rem;
+            .list-item {
+                @include flex($gap: 1.2rem);
+                transition: all 0.3s;
+                svg {
+                    stroke: currentColor;
+                    color: $paragraph-color;
+                }
+                &:hover {
+                    color: $theme-one;
+                    transform: translateX(5px);
+                    svg {
+                        stroke: $theme-one;
+                    }
+                }
+            }
+
+            .list-text {
+                font-size: 1.6rem;
+                display: unset;
+                -webkit-line-clamp: unset;
+                -webkit-box-orient: unset;
+                overflow: unset;
+            }
+        }
+    }
+    .recent-post {
+        .section-list {
+            gap: 2.5rem;
+        }
+        .post-wrapper {
+            @include flex($gap: 2rem);
+            .wrapper-date {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+            .wrapper-detail {
+                font-family: $outfit;
+                font-weight: 400;
+            }
+            .wrapper-content {
+                flex: 1 1 0%;
+            }
+        }
+    }
+}
+
+// blog-details-------------------->
+.blog-details {
+    .blog-details-item {
+        padding-right: 5.5rem;
+    }
+
+    .blog-d-wrapper {
+        .wrapper-img {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+        .wrapper-content {
+            margin-top: 5rem;
+
+            .wrapper-detail {
+                margin-bottom: 1.8rem;
+            }
+            .inner-text {
+                color: $theme-one;
+                font-family: $garamonde;
+                font-weight: 700;
+                font-size: 4.6rem;
+                padding: 0 1rem 1rem 0;
+            }
+        }
+    }
+    .blog-d-item {
+        margin-top: 3rem;
+        .wrapper-content {
+            margin-top: 0rem;
+            .wrapper-detail {
+                font-weight: 500;
+            }
+        }
+    }
+
+    // comment-section----------->
+    .comment-section {
+        margin-top: 7rem;
+        .g-4 {
+            --bs-gutter-y: 7rem;
+        }
+    }
+    .testimonial-wrapper {
+        background: $dark-white;
+        padding: 3rem 4rem;
+        border-radius: 1rem;
+        gap: 5rem;
+        flex-wrap: wrap;
+        .wrapper-img {
+            height: 15rem;
+            width: 15rem;
+            border-radius: 50%;
+        }
+        .wrapper-item {
+            gap: 2rem;
+            flex: 1 1 0%;
+        }
+
+        .wrapper-detail {
+            font-family: $outfit;
+            font-size: 2rem;
+            font-weight: 400;
+        }
+        .social-item {
+            flex-direction: row;
+            gap: 1.5rem;
+            svg {
+                color: $theme-one;
+            }
+            .list-icon {
+                &:hover {
+                    svg {
+                        color: $theme-one;
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+    .comment-box {
+        padding: 3.9rem 0;
+        @include flex($gap: 4rem, $align: flex-start);
+        .box-detail {
+            font-family: $outfit;
+            font-weight: 400;
+        }
+        .box-desc {
+            margin: 1.5rem 0;
+        }
+        .box-item {
+            flex: 1 1 0%;
+        }
+        .box-data {
+            @include flex($justify: space-between);
+        }
+        .primary-btn {
+            background: transparent;
+            border: none;
+            padding: 0;
+            color: $paragraph-color;
+            overflow: unset;
+
+            &::after{
+                display: none;
+            }
+        }
+    }
+    .comment-box-inner {
+        margin-left: 11.2rem;
+        border: 1px solid rgba($color: $paragraph-color, $alpha: 0.1);
+        border-left: 0;
+        border-right: 0;
+    }
+}
+
+
+// maintenance-------------------->
+
+.maintenance{
+    padding: 13rem 0;
+
+    .error-section  {
+        .wrapper-title{
+            font-weight: 700;
+            margin-bottom: 5rem;
+        }
+        
+    }
+}

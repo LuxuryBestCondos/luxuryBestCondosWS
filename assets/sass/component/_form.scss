@@ -1,0 +1,85 @@
+.contact-form {
+    padding: 8rem;
+    background: $dark-white;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    textarea,
+    .form-control {
+        width: 100%;
+        padding-left: 2.5rem;
+        font-size: 1.6rem;
+        &::placeholder {
+            color: rgba($color: $paragraph-color, $alpha: 0.5);
+        }
+        &:focus {
+            border: 1px solid $theme-one;
+            box-shadow: none;
+            border-color: $theme-one;
+        }
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    .select-option {
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+        .option,
+        .list {
+            width: 100%;
+        }
+
+        &::after {
+            right: 2.5rem;
+        }
+    }
+
+    .form-control,
+    .select-option {
+        height: 5.6rem;
+        border-radius: 10rem;
+    }
+
+    textarea {
+        border-radius: 2rem;
+        border: 1px solid transparent;
+        padding-top: 2.5rem;
+    }
+    label {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-content {
+        margin-bottom: 3rem;
+    }
+    .form-input {
+        @include flex($gap: 3rem);
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+        .form-item {
+            width: 100%;
+        }
+    }
+}
+.contact-form-two {
+    padding: 5rem;
+}
+
+.c-form-two {
+    padding: 13rem 0;
+    .contact-form {
+        padding: 13rem 9rem;
+
+        .primary-btn {
+            width: 100%;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .form-content {
+            margin-bottom: 5rem;
+        }
+    }
+}
+

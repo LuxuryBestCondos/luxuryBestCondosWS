@@ -1,0 +1,54 @@
+//flex-------------------->
+@mixin flex($justify: unset, $align: center, $direction: row, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+// grid-------------------->
+@mixin grid($grid: repeat(6, minmax(0, 1fr)), $gap: 2.4rem) {
+    display: grid;
+    grid-template-columns: $grid;
+    gap: $gap;
+}
+
+// wrapper-------------------->
+@mixin wrapper {
+    background: $color-white;
+    border: 1px solid #eaf1ff;
+    border-radius: 1rem;
+}
+
+// button-------------------->
+@mixin btnPrimary(
+    $display: inline-flex,
+    $align: center,
+    $justify: center,
+    $pd: 2rem 4rem,
+    $br: 50rem,
+    $position: relative,
+    $background: $theme-one,
+    $mg: 0,
+    $color: $theme-one
+) {
+    display: $display;
+    align-items: $align;
+    justify-content: $justify;
+    padding: $pd;
+    border-radius: $br;
+    position: $position;
+    background: $background;
+    margin: $mg;
+    text-align: center;
+    overflow: hidden;
+    color: $color-white;
+
+    svg {
+        fill: currentcolor;
+        color: transparent;
+        stroke: $color-white;
+    }
+}

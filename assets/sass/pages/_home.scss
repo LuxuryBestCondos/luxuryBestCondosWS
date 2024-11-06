@@ -1,0 +1,679 @@
+// category-section-------------------->
+.category-section {
+    @include grid();
+}
+// category-two-------------------->
+.category-two {
+    .category-section {
+        @include grid($grid: repeat(4, minmax(0, 1fr)), $gap: 2.4rem);
+    }
+    .category-wrapper {
+        flex-direction: row;
+        gap: 2.5rem;
+        padding: 2.7rem 2.8rem 2.3rem 3rem;
+        border: 1px solid rgba($color: #272727, $alpha: 0.18);
+        z-index: 1;
+
+        .wrapper-title {
+            letter-spacing: -0.03em;
+        }
+        .icon {
+            @include flex($justify: center);
+            height: 9rem;
+            width: 9rem;
+            border: 1px solid rgba($color: #272727, $alpha: 0.1);
+            border-radius: 50%;
+        }
+
+        &::before {
+            border-top: solid 1px #272727;
+            border-bottom: solid 1px #272727;
+        }
+        &::after {
+            border-left: solid 1px #272727;
+            border-right: solid 1px #272727;
+        }
+
+        &:hover {
+            background: $color-white;
+            box-shadow: 0 0 6rem 0 rgba(0, 0, 0, 0.06);
+
+            &::before {
+                transform: scale(1);
+                border-radius: 2rem;
+            }
+            &::after {
+                transform: scale(1);
+                border-radius: 2rem;
+            }
+
+            .icon {
+                background: rgba($color: #272727, $alpha: 0.09);
+            }
+        }
+    }
+}
+
+// feature-section-------------------->
+.featured-section {
+    max-width: 166rem;
+    border-radius: 4rem;
+    margin: 0 auto;
+    padding-bottom: 13rem;
+
+    .subtitle {
+        background-color: $color-white;
+    }
+    .featured-section-item {
+        position: relative;
+        .swiper-buttons {
+            @include flex($gap: 1rem);
+            position: absolute;
+            top: -9rem;
+            right: 5rem;
+            z-index: 1;
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 4.6rem;
+                height: 4.6rem;
+                background-color: $color-white;
+                border-radius: 50%;
+                transition: all 0.3s;
+                svg {
+                    stroke: currentColor;
+                    color: $theme-one;
+                }
+                &::after {
+                    display: none;
+                }
+
+                &:hover {
+                    background-color: $theme-one;
+                    svg {
+                        color: $color-white;
+                    }
+                }
+            }
+            .swiper-button-prev {
+                left: 0;
+            }
+        }
+    }
+}
+
+.featured-two {
+    .featured-section {
+        max-width: 188rem;
+        .featured-section-item {
+            .swiper-buttons {
+                .swiper-button-next,
+                .swiper-button-prev {
+                    background-color: #ece1d5;
+                    height: 4rem;
+                    width: 4rem;
+                    svg {
+                        stroke: currentColor;
+                        color: $theme-two;
+                    }
+
+                    &:hover {
+                        background-color: $theme-two;
+                        svg {
+                            color: $color-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// discount-section-------------------->
+.discount {
+    padding-bottom: 8rem;
+    .discount-section {
+        position: relative;
+
+        .swiper-buttons {
+            @include flex($justify: center, $gap: 3rem);
+            position: absolute;
+            bottom: -8rem;
+            width: 100%;
+        }
+
+        .swiper-pagination {
+            @include flex($gap: 1rem);
+            z-index: 0;
+            position: unset;
+            width: auto;
+            height: 4rem;
+            .swiper-pagination-bullet {
+                background: $theme-two;
+            }
+        }
+    }
+}
+
+// experience-section-------------------->
+.experience {
+    
+    .experience-wrapper {
+        @include flex($gap: 4.2rem);
+        svg,
+        circle {
+            fill: currentColor;
+            transition: all 0.5s;
+        }
+        svg {
+            color: $theme-two;
+        }
+        circle {
+            color: #faf6f1;
+        }
+
+        .wrapper-title {
+            transition: all 0.5s;
+        }
+        .wrapper-detail {
+            margin-top: 1.5rem;
+        }
+
+        &:hover {
+            .wrapper-title {
+                color: $theme-two;
+            }
+            svg {
+                color: $color-white;
+            }
+            circle {
+                color: $theme-two;
+            }
+        }
+    }
+}
+
+// service-section-------------------->
+.service-section {
+    @include flex($gap: 3rem);
+    width: 102%;
+    position: relative;
+    margin-left: -2rem;
+
+    .is-active{
+        width: 40%;
+        .wrapper-item {
+            background: linear-gradient(to top, rgba(28, 28, 28, 1), rgba(28, 28, 28, 0.094));
+        }
+        width: 40%;
+        .room-inner {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .room-inner-two {
+            opacity: 1;
+            visibility: visible;
+            left: 0;
+        }
+    }
+}
+
+.service-two {
+    padding-bottom: 57.2rem;
+}
+
+// hotels-section-------------------->
+.hotels {
+    padding-bottom: 42.4rem;
+
+    .section-btn {
+        @include flex($justify: center);
+        margin-top: 6rem;
+    }
+    .hotel-categories {
+        @include flex($gap: 1.8rem);
+        .primary-btn {
+            color: $heading-color;
+            background: $dark-white;
+            font-family: $outfit;
+            font-weight: 500;
+            padding: 1.4rem 2.8rem;
+
+            &:hover {
+                color: $color-white;
+                &::after {
+                    background: $theme-one;
+                }
+            }
+        }
+    }
+}
+.hotels-two {
+    padding: 13rem 2rem 60.2rem 2rem;
+
+    .hotels-main-section {
+        border-radius: 4rem;
+        padding: 13rem 0;
+    }
+    .hotel-categories {
+        .primary-btn {
+            background: $color-white;
+            border: 1px solid rgba($color: $theme-two, $alpha: 0.3);
+
+            &::after {
+                background: $theme-two;
+            }
+            &:hover {
+                &::after {
+                    background-color: $theme-two;
+                }
+            }
+        }
+    }
+}
+
+.hotels-three {
+    padding: 13rem 0;
+    .subtitle-three {
+        background: $color-white;
+    }
+    .hotel-categories {
+        .primary-btn {
+            border: 1px solid rgba($color: #272727, $alpha: 0.1);
+            background: $color-white;
+
+            &::after {
+                background: #272727;
+            }
+            &:hover {
+                &::after {
+                    background-color: #272727;
+                }
+            }
+        }
+    }
+}
+
+// customer-section-------------------->
+.customer {
+    .customer-section {
+        padding: 41.3rem 0 9rem 0;
+        position: relative;
+
+        .customer-intro {
+            @include flex($justify: center);
+            position: absolute;
+            height: 64.6rem;
+            width: 100%;
+            top: -48.5%;
+            border-radius: 1rem;
+
+            .video {
+                @include flex($justify: center);
+                height: 10.2rem;
+                width: 10.2rem;
+                text-align: center;
+                border-radius: 50%;
+                background: #ffffff;
+            }
+        }
+    }
+}
+
+.customer-three {
+    .customer-section {
+        padding: 8rem 0;
+        border-radius: 2rem;
+        .counter-wrapper {
+            .devider {
+                background: #272727;
+            }
+        }
+    }
+}
+
+// testimonial-one-------------------->
+.testimonial {
+    padding-bottom: 29.6rem;
+    .testimonial-section {
+        position: relative;
+        @include flex($justify: center);
+    }
+}
+
+.testimonial-two {
+    .testimonial-item-section {
+        padding: 42rem 0 12rem 0;
+        position: relative;
+    }
+    .testimonial-section {
+        background: $theme-two;
+        padding: 8.5rem 8.5rem 18.4rem 8.5rem;
+        border-radius: 4rem;
+        position: absolute;
+        width: 100%;
+        top: -58%;
+
+        h2,
+        h5,
+        p,
+        .review-text {
+            color: $color-white;
+        }
+    }
+    .slider-section {
+        position: relative;
+        .testimonial-buttons {
+            position: absolute;
+            @include flex($gap: 3rem);
+            margin-top: 6.7rem;
+        }
+
+        .testimonial-pagination {
+            @include flex($gap: 1rem);
+            z-index: 0;
+            position: unset;
+            width: auto;
+            height: 4rem;
+            .swiper-pagination-bullet {
+                background: $color-white;
+            }
+        }
+        .testimonial-button-next,
+        .testimonial-button-prev {
+            @include flex($justify: center);
+
+            background: #b8915f;
+            border: 1px solid #caa26e;
+
+            svg {
+                stroke: currentColor;
+                color: $color-white;
+            }
+            &:hover {
+                background-color: $color-white;
+                svg {
+                    color: $theme-two;
+                }
+            }
+        }
+    }
+    .testimonial-slide {
+        display: unset;
+    }
+    .testimonial-wrapper-section {
+        position: relative;
+        .subtitle-two {
+            background: #b8915f;
+            border: 1px solid #caa26e;
+            color: $color-white;
+        }
+    }
+    .testimonial-img {
+        position: absolute;
+        right: 0;
+        top: -15rem;
+        user-select: none;
+    }
+    .testimonial-wrapper {
+        display: unset;
+        p,
+        h5 {
+            font-family: $outfit;
+            font-weight: 400;
+        }
+        .wrapper-review {
+            @include flex($gap: 2rem);
+            margin-bottom: 3rem;
+        }
+        .wrapper-detail {
+            font-size: 2.4rem;
+            line-height: 3.7rem;
+        }
+        .aurthor {
+            margin-top: 4.9rem;
+            @include flex($justify: space-between);
+            padding-right: 2rem;
+
+            .aurthor-item {
+                @include flex($gap: 2rem);
+            }
+        }
+    }
+}
+
+.testimonial-three {
+    .testimonial-section {
+        background: $dark-white;
+        h2,
+        h5,
+        p,
+        .review-text {
+            color: $heading-color;
+        }
+        .subtitle {
+            background: $color-white;
+            color: $theme-one;
+            border: 1px solid transparent;
+        }
+    }
+    .slider-section {
+        .testimonial-pagination {
+            .swiper-pagination-bullet {
+                background: $heading-color;
+            }
+        }
+        .testimonial-button-next,
+        .testimonial-button-prev {
+            background: $theme-one;
+            border: 1px solid $theme-one;
+
+            &:hover {
+                background-color: $color-white;
+                svg {
+                    color: $theme-one;
+                }
+            }
+        }
+    }
+
+    .counterup-section {
+        .devider {
+            background: $theme-one;
+        }
+        .counter-wrapper {
+            .counter-text {
+                color: $heading-color;
+            }
+
+            .wrapper-detail {
+                color: $paragraph-color;
+            }
+        }
+    }
+}
+
+// blog-section-------------------->
+.blog {
+    padding: 13rem 0;
+}
+
+// newsletter-section-------------------->
+.newsletter {
+    background: $heading-color;
+    border-bottom: 1px solid rgba($color-white, 0.05);
+    position: relative;
+    z-index: 1;
+    .newsletter-img {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        animation: bgAnimation 5s linear infinite alternate-reverse;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .newsletter-section {
+        @include flex();
+    }
+
+    .primary-btn {
+        border: 1px solid transparent;
+    }
+
+    .subtitle,
+    .heading {
+        color: $color-white;
+    }
+    .subtitle {
+        background: transparent;
+        border: 1px solid rgba($dark-white, 0.2);
+    }
+    .location,
+    .subscribe {
+        flex-basis: 50%;
+        padding: 13rem 0;
+    }
+    .location {
+        border-right: 1px solid rgba($color-white, 0.05);
+
+        .primary-btn {
+            padding: 1.6rem 4rem;
+        }
+    }
+    .subscribe {
+        padding-left: 19.7rem;
+    }
+
+    .subscribe-btn {
+        @include flex($gap: 1.5rem);
+
+        input {
+            width: 29.5rem;
+            height: 5.6rem;
+            padding: 2.2rem 2.5rem;
+            border: 1px solid rgba($dark-white, 0.2);
+            border-radius: 50rem;
+            font-size: 1.6rem;
+            background: rgba($color: $color-white, $alpha: 0.01);
+            color: $color-white;
+        }
+        .primary-btn {
+            border: 1px solid $dark-white;
+            padding: 1.6rem 4rem;
+            background: transparent;
+
+           
+        }
+    }
+}
+
+.newsletter-three {
+    border-bottom: 0;
+
+    .social-section {
+        @include grid($grid: repeat(8, minmax(0, 1fr)), $gap: 0);
+    }
+
+    .subtitle-three {
+        color: #272727;
+        background: #272727;
+    }
+
+    .social-item {
+        position: relative;
+
+        .item-overlay {
+            position: absolute;
+            height: 100%;
+            width: 0;
+            overflow: hidden;
+            background: rgb(39, 39, 39, 0.6);
+            transition: all 0.4s ease-in-out;
+            right: 0;
+            top: 0;
+            @include flex($justify: center);
+        }
+
+        &:hover {
+            .item-overlay {
+                transition: all 0.4s ease-in-out;
+                right: auto;
+                top: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+
+// pricing-section-------------------->
+.pricing {
+    padding-bottom: 13rem;
+    .container {
+        padding: 0 7.5rem;
+    }
+}
+
+.pricing-two {
+    .section-title {
+        .subtitle-three {
+            background: rgba(61, 61, 61, 1);
+            border: 1px solid rgba($color: $color-white, $alpha: 0.1);
+        }
+        .heading {
+            color: $color-white;
+        }
+    }
+    .pricing-wrapper {
+        background: rgba(39, 39, 39, 1);
+        border: 1px solid rgba($color-white, 0.1);
+        h2,
+        h5,
+        p {
+            color: $color-white;
+        }
+
+        .wrapper-content {
+            .primary-btn {
+                color: #272727;
+                border: 1px solid transparent;
+                svg {
+                    stroke: #272727;
+                }
+
+                &:hover {
+                    background: #272727;
+                    color: $color-white;
+                    svg {
+                        stroke: $color-white;
+                    }
+                }
+            }
+        }
+
+        .section-list {
+            .list-item {
+                @include flex($gap: 1.3rem);
+                svg {
+                    color: #272727;
+                }
+            }
+        }
+
+        &:hover {
+            background-color: $heading-color;
+
+            .section-list {
+                .list-item {
+                    svg {
+                        color: #272727;
+                    }
+                }
+            }
+        }
+    }
+}
+

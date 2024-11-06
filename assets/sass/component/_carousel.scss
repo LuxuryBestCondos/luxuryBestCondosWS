@@ -1,0 +1,128 @@
+// custom-slider-------------------->
+.qs-wrapper {
+    height: 50rem;
+    width: 100%;
+    position: relative;
+    @include flex($justify: center);
+    z-index: -1;
+}
+.qs-slide {
+    padding: 2rem 6rem 2rem 2rem;
+    box-shadow: 1rem 1rem 8rem 0 rgba(0, 0, 0, 0.15);
+    position: absolute;
+    transition: all;
+    transition-duration: 1s;
+    opacity: 0;
+    background: $color-white;
+    transform: scale(0.92);
+    border-radius: 1rem;
+}
+.qs-slide-active {
+    z-index: 10;
+    opacity: 1;
+    top: 0;
+    transform: scale(1);
+}
+.qs-slide-next {
+    z-index: 9;
+    top: 5rem;
+    opacity: 0.8;
+}
+.qs-slide-next-2 {
+    z-index: 8;
+    top: 10rem;
+    opacity: 0.8;
+    transform: scale(0.82);
+}
+
+.testimonial-btn {
+    position: absolute;
+    bottom: -16rem;
+    @include flex($gap: 3rem);
+    button {
+        background: #f3f4f9;
+        border: none;
+        outline: none;
+        height: 4.6rem;
+        width: 4.6rem;
+        border-radius: 50%;
+        transition: all 0.3s;
+        svg {
+            fill: currentColor;
+            color: transparent;
+            stroke: $theme-one;
+        }
+        &:hover {
+            background: $theme-one;
+            svg {
+                stroke: $color-white;
+            }
+        }
+    }
+}
+
+.home-two-next,
+.home-two-prev {
+    @include flex($justify: center);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    transition: all 0.3s;
+    background: #ece1d5;
+
+    svg {
+        stroke: currentColor;
+        color: $theme-two;
+    }
+    &:hover {
+        background-color: $theme-two;
+        svg {
+            color: $color-white;
+        }
+    }
+}
+
+.wrapper-swiper {
+    position: relative;
+   
+    .hotel-swiper {
+        position: absolute;
+        width: calc(100% - 40px);
+        bottom: 4rem;
+        padding: 2rem;
+        background: rgba(37, 37, 37, 0.4);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        transform: translateX(20px);
+        border-radius: 1.6rem;
+    
+
+        .swiper-img {
+            height: 11.2rem;
+            width: 16.1rem;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .swiper-slide-thumb-active {
+            .swiper-img {
+               
+                border: 1px solid $color-white;
+                border-radius: 1rem;
+            }
+        }
+    }
+
+    .hotel-swiper2 {
+        height: 69.8rem;
+        border-radius: 2rem;
+
+    }
+    
+}
+
+@media #{$tab-port} {
+    .qs-slide {
+        padding: 2rem;
+    }
+}

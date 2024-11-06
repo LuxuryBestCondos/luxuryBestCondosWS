@@ -1,0 +1,65 @@
+.about {
+    padding-bottom: 42.4rem;
+}
+
+.about-section {
+    .about-content {
+        .about-detail {
+            margin-top: 4.5rem;
+        }
+    }
+    .about-item {
+        @include flex($gap: 11.2rem);
+        padding-top: 4.4rem;
+        border-top: 1px solid rgba($color: $theme-one, $alpha: 0.1);
+    }
+
+    .about-wrapper{
+        .wrapper-title{
+            margin-bottom: 1.2rem;
+        }
+    }
+    .about-img {
+        position: relative;
+    }
+}
+
+.about-three {
+    padding-bottom: 13rem;
+    .about-section {
+        .about-item {
+            border-top: 1px solid rgba($color: $theme-three, $alpha: 0.1);
+        }
+        .img-content {
+            background: $theme-three;
+        }
+    }
+}
+
+.discount-two {
+    .discount-section {
+        .home-two-next,
+        .home-two-prev {
+            background: $dark-white;
+            svg {
+                color: $theme-one;
+            }
+
+            &:hover {
+                background: $theme-one;
+
+                svg {
+                    color: $color-white;
+                }
+            }
+        }
+
+        .swiper-pagination {
+            .swiper-pagination-bullet {
+                background: $theme-one !important;
+            }
+        }
+    }
+}
+
+

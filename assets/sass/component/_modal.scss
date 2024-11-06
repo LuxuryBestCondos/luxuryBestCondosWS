@@ -1,0 +1,350 @@
+// modal-items-------------------->
+.modal-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.modal-wrapper.active {
+    @include flex($justify: flex-end, $align: flex-start);
+}
+
+.modal-wrapper .anywhere-away {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.37);
+    width: 100%;
+    height: 100%;
+}
+
+.modal-main {
+    position: relative;
+    background: $color-white;
+    padding: 7rem 6rem;
+
+    .wrapper-content {
+        @include flex($justify: space-between);
+        .wrapper-heding {
+            font-size: 2.4rem;
+        }
+    }
+    .wrapper-close-btn {
+        position: absolute;
+        right: 3rem;
+        top: 3rem;
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+        svg {
+            fill: currentColor;
+            fill: red;
+            stroke: red;
+        }
+    }
+}
+
+.modal-wrapper-two {
+    .login-section {
+        .contact-form {
+            textarea,
+            .form-control {
+                &:focus {
+                    border: 1px solid $theme-two;
+
+                    border-color: $theme-two;
+                }
+            }
+            .forget-pass {
+                .forget {
+                    color: $theme-two;
+                }
+            }
+
+            .social-item {
+                .social-icon {
+                    background: rgba($color: $theme-two, $alpha: 0.05);
+                    svg {
+                        color: $theme-two;
+                        transition: all 0.2s;
+                    }
+                    &:hover {
+                        svg {
+                            color: $color-white;
+                        }
+                    }
+                }
+            }
+            .wrapper-social {
+                .account a {
+                    color: $theme-two;
+                }
+            }
+        }
+    }
+
+    .social-icon::after {
+        background: $theme-two;
+    }
+}
+
+.modal-wrapper-three {
+    .login-section {
+        .contact-form {
+            textarea,
+            .form-control {
+                &:focus {
+                    border: 1px solid $theme-three;
+
+                    border-color: $theme-three;
+                }
+            }
+            .forget-pass {
+                .forget {
+                    color: $theme-three;
+                }
+            }
+
+            .social-item {
+                .social-icon {
+                    background: rgba($color: $theme-three, $alpha: 0.05);
+                    svg {
+                        color: $theme-three;
+                        transition: all 0.2s;
+                    }
+                    &:hover {
+                        svg {
+                            color: $color-white;
+                        }
+                    }
+                }
+            }
+            .wrapper-social {
+                .account a {
+                    color: $theme-three;
+                }
+            }
+        }
+    }
+
+    .social-icon::after {
+        background: $theme-three;
+    }
+}
+
+.login-section {
+    height: 100%;
+    width: 58.2rem;
+
+    .section-head {
+        margin-bottom: 5rem;
+    }
+    .section-title {
+        margin-bottom: 0;
+    }
+    .contact-form {
+        padding: 0;
+        background: transparent;
+        border-radius: 0;
+        margin-top: 0;
+
+        .form-input {
+            flex-direction: column;
+
+            gap: 2rem;
+        }
+
+        .forget-pass {
+            @include flex($justify: space-between);
+
+            .remember {
+                label {
+                    margin-left: 1rem;
+                    color: $paragraph-color;
+                }
+            }
+            .forget {
+                color: $theme-one;
+                font-family: $outfit;
+                display: block;
+            }
+        }
+        .option {
+            margin: 5rem 0;
+            font-family: $outfit;
+            text-align: center;
+            font-weight: 400;
+        }
+        .primary-btn {
+            width: 100%;
+        }
+        .wrapper-social {
+            text-align: center;
+
+            .account {
+                display: inline-block;
+                font-size: 1.6rem;
+                margin-top: 1rem;
+                a {
+                    color: $theme-one;
+                    font-family: $outfit;
+                }
+            }
+        }
+        .social-item {
+            justify-content: center;
+
+            .social-icon {
+                background: $dark-white;
+                height: 7rem;
+                width: 7rem;
+            }
+        }
+    }
+}
+
+.logout.active {
+    justify-content: center;
+    align-items: center;
+
+    .logout-section {
+        border-radius: 2rem;
+        animation: modal 0.2s linear 1;
+    }
+
+    .logout-wrapper {
+        @include flex($direction: column, $gap: 4rem);
+
+        .wrapper-content {
+            display: unset;
+            text-align: center;
+        }
+        .wrapper-mail {
+            margin: 3rem 0 0.5rem 0;
+        }
+        .logout-btn {
+            @include flex($direction: column, $gap: 2rem);
+            margin-top: 1rem;
+        }
+        .discard-btn {
+            font-size: 1.6rem;
+            background: $color-white;
+            border: 1px solid $theme-one;
+            color: $heading-color;
+            &::after {
+                display: none;
+            }
+        }
+        .primary-btn {
+            height: 5.6rem;
+            width: 23.6rem;
+        }
+        .log-btn {
+            padding: 1.5rem 5rem;
+        }
+    }
+}
+
+.p-option {
+    position: relative;
+}
+.invoice-option {
+    position: absolute;
+    width: auto;
+    height: auto;
+    z-index: 1;
+
+    .invoice-section {
+        width: 13rem;
+        padding: 1rem 1.3rem;
+        top: -2rem;
+        right: 9rem;
+        border-radius: 8px;
+        background: $dark-white;
+
+        button {
+            font-size: 1.4rem;
+            display: block;
+            &:not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
+
+            &:hover {
+                color: $theme-one;
+            }
+        }
+    }
+}
+
+.purchase-btn {
+    z-index: 2;
+    position: relative;
+}
+
+.invoice-main.active {
+    justify-content: center;
+    align-items: center;
+
+    .modal-main {
+        width: calc(100% - 70rem);
+        border-radius: 2rem;
+        height: auto;
+        padding: 8rem 0;
+
+        #table {
+            th:first-child,
+            th:last-child {
+                border-radius: 0 !important;
+              
+            }
+            .p-head{
+                border-top: 1px solid #eaf1ff ;
+                border-bottom: 1px solid #eaf1ff ;
+            }
+            .p-heading,.p-data{
+                background: $color-white ;
+                padding: 2rem 8rem !important;
+                
+            }
+        }
+    }
+    .section-head {
+        border-bottom: 1px solid #eaf1ff;
+        padding: 0 8rem 3rem 8rem;
+    }
+    .invoice-detail {
+        padding: 5rem 8rem;
+        @include flex($justify: space-between);
+
+        .number {
+            margin-bottom: 1rem;
+        }
+        .invoice-print {
+            padding: 0 1.5rem;
+            border-radius: 50rem;
+            background: #63ab45;
+            color: $color-white;
+            margin-bottom: 3rem;
+        }
+    }
+
+    .price-section{
+        @include flex($justify:flex-end);
+    }
+    .total-price{
+        padding: 2rem 14rem 2rem 4rem;
+      display: inline-flex;
+      gap: 8rem;
+        border-bottom: 1px solid #eaf1ff;
+        h5{
+            font-family: $outfit;
+            font-weight: 400;
+        }
+    }
+}

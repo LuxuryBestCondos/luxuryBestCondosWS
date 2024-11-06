@@ -1,0 +1,144 @@
+.footer {
+    .footer-section {
+        padding: 10rem 0 7rem 0;
+
+        .footer-detail {
+            margin: 4rem 0;
+            color: #b5b5b5;
+        }
+
+        .social-item {
+            .icon-box {
+                &:hover {
+                    .social-icon {
+                        overflow: unset;
+                    }
+                }
+            }
+            .social-icon {
+                border: 1px solid rgba($color: $dark-white, $alpha: 0.18);
+                transition: all 0.5;
+
+                svg {
+                    color: $color-white;
+                }
+            }
+        }
+    }
+
+    .list-item {
+        color: #b5b5b5;
+        transition: all 0.3s;
+        font-family: $outfit;
+        font-weight: 300;
+        @include flex();
+        &:hover {
+            gap: 1rem;
+            color: $color-white;
+            svg {
+                display: block;
+            }
+        }
+    }
+
+    .footer-link {
+        .title {
+            color: $color-white;
+            font-weight: 500;
+        }
+
+        svg {
+            display: none;
+            color: $color-white;
+        }
+
+        .section-list {
+            margin-top: 3.5rem;
+            gap: 2rem;
+        }
+    }
+
+    .contact-link {
+        svg {
+            display: block;
+            color: $theme-one;
+        }
+
+        .contact-box {
+            @include flex($gap: 2.5rem);
+            .content {
+                flex: 1 1 0%;
+            }
+        }
+    }
+
+    .footer-counter {
+        @include flex($gap: 4.3rem);
+        margin-top: 4.5rem;
+
+        .wrapper-title {
+            color: $color-white;
+            font-weight: 400;
+        }
+    }
+
+    .copyright {
+        background-color: #323239;
+        padding: 2rem 0;
+    }
+
+    .copyright-section {
+        .list-item {
+            font-family: $outfit;
+            font-weight: 400;
+            display: unset;
+        }
+
+        .copyright-item {
+            @include flex($justify: end, $gap: 2rem);
+        }
+        .devider {
+            height: 1.5rem;
+            width: 1px;
+            background: $paragraph-color;
+        }
+    }
+}
+
+// home-two-------------------->
+.footer-two {
+    .footer-section {
+        .social-item {
+            .social-icon {
+                &::after {
+                    background: $theme-two;
+                }
+            }
+        }
+    }
+
+    .contact-link {
+        svg {
+            color: $theme-two;
+        }
+    }
+}
+
+// home-three-------------------->
+.footer-three {
+    .footer-section {
+        .social-item {
+            .social-icon {
+                &::after {
+                    background: $theme-three;
+                }
+            }
+        }
+    }
+
+    .contact-link {
+        svg {
+            color: $theme-three;
+        }
+    }
+}

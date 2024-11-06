@@ -1,0 +1,646 @@
+.user-profile {
+    padding: 13rem 0;
+}
+
+.user-profile-section {
+    .text {
+        color: $paragraph-color;
+        font-size: 1.6rem;
+        transition: all 0.2s;
+    }
+}
+
+.user-dashboard {
+    @include flex($align: flex-start, $gap: 2.4rem, $justify: flex-start);
+
+    .nav-item {
+        width: 30.4rem;
+        background-color: $color-white;
+        display: unset;
+        border-radius: 1rem;
+
+        .user-detail {
+            @include flex($gap: 1rem);
+            padding: 2.5rem 4rem;
+            border-bottom: 1px solid #f5f3ff;
+            .wrapper-detail {
+                font-size: 1.6rem;
+                line-height: 2rem;
+            }
+            .wrapper-desc {
+                color: $heading-color;
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+            }
+            .user-content {
+                flex: 1 1 0%;
+            }
+        }
+        .nav-btn {
+            padding: 3rem 4rem 4rem;
+            @include flex($direction: column, $align: flex-start, $gap: 2.8rem);
+
+            .wrapper-title {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .nav-menu-item,
+        .nav-setting-item {
+            width: 100%;
+        }
+        .nav-link {
+            @include flex($gap: 1rem);
+            padding: 0.8rem 1rem;
+            width: 100%;
+
+            &:not(:last-child) {
+                margin-bottom: 1.2rem;
+            }
+
+            .text {
+                font-family: $outfit;
+                color: $heading-color;
+                font-weight: 400;
+            }
+            a {
+                span {
+                    margin-right: 1.6rem;
+                }
+            }
+
+            svg {
+                fill: currentColor;
+                color: $theme-one;
+                transition: all 0.2s;
+            }
+        }
+
+        .nav-link.active {
+            background: #f3f4f9;
+            svg {
+                fill: $theme-one;
+                transform: scale(1.1);
+            }
+
+            .text {
+                transform: translateX(5px);
+                color: $theme-one;
+            }
+        }
+    }
+
+    .nav-content {
+        width: 100%;
+        flex: 1 1 0%;
+        .paragraph {
+            color: $heading-color;
+        }
+
+        // dashboard--
+        .booking-table {
+            background: $color-white;
+            padding: 2.4rem;
+            border-radius: 1rem;
+
+            .heading {
+                margin-bottom: 2.4rem;
+            }
+
+            .deactive {
+                background: #9ca3af;
+            }
+            .active {
+                background: #63ab45;
+            }
+
+            .expired {
+                background: #ff385c;
+            }
+            .activation {
+                font-size: 1.6rem;
+                line-height: 2.6rem;
+                @include flex($gap: 1rem, $justify: center);
+                border-radius: 50rem;
+                color: $color-white;
+                padding: 0 1.2rem;
+            }
+
+            .table-main {
+                width: 100%;
+                td,
+                th {
+                    &:first-child,
+                    th:first-child {
+                        border-radius: 10px 0 0 10px;
+                    }
+                    &:last-child,
+                    th:last-child {
+                        border-radius: 0 10px 10px 0;
+                    }
+                }
+
+                th {
+                    background-color: #f3f4f9;
+                    padding: 2rem 3rem;
+                }
+                .p-row {
+                    &:not(:last-child) {
+                        border-bottom: 1px solid #eaf1ff;
+                    }
+                }
+                .p-data {
+                    padding: 2rem 1rem;
+                }
+
+                .p-heading {
+                    padding: 2rem 1.5rem;
+                    border: none;
+                    .table-text {
+                        font-size: 2rem;
+                        font-family: $outfit;
+                        font-weight: 400;
+                    }
+                }
+                .action-heading {
+                    text-align: end;
+                }
+                .p-wrapper {
+                    width: 27rem;
+                    @include flex($gap: 1rem);
+                    .wrapper-content {
+                        flex: 1 1 0%;
+                    }
+                    .wrapper-img {
+                        width: 4rem;
+                        height: 4rem;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .cat-text {
+                        color: $theme-one;
+                        font-weight: 400;
+                        font-size: 1.4rem;
+                    }
+                    .table-text {
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        color: $paragraph-color;
+                        font-family: $outfit;
+                        font-weight: 400;
+                    }
+                }
+
+                .p-img {
+                    @include flex($gap: 1rem);
+                }
+                .action-img {
+                    justify-content: flex-end;
+                }
+                .social-img {
+                    @include flex($justify: center);
+                    height: 4rem;
+                    width: 4rem;
+                    border-radius: 50%;
+                    background: #f3f4f9;
+                }
+            }
+        }
+        .blog-pagination {
+            justify-content: flex-end;
+            .pagination-num {
+                background: $color-white;
+                &:hover {
+                    background: $theme-one;
+                }
+            }
+        }
+        .profile-section {
+            .wrapper {
+                @include flex($gap: 1rem);
+                height: auto;
+                padding: 2rem;
+                background-color: $color-white;
+                transition: all 0.3s;
+
+                .wrapper-img {
+                    @include flex($justify: center);
+                    height: 6rem;
+                    width: 6rem;
+                    border-radius: 50%;
+                    background: #f3f4f9;
+                }
+                .heading {
+                    font-weight: 500;
+                }
+
+                .wrapper-content {
+                    margin-top: 0;
+                    padding: 0;
+                    border-bottom: 0;
+                    &::before {
+                        display: none !important;
+                    }
+                }
+
+                &:hover {
+                    background: $theme-one;
+                    .heading,
+                    .paragraph {
+                        color: $color-white;
+                    }
+                }
+            }
+
+            .info-list {
+                @include flex($justify: flex-start, $gap: 2rem);
+
+                p {
+                    font-size: 1.6rem;
+                }
+
+                .info-title,
+                .info-details {
+                    @include flex($direction: column, $align: flex-start, $gap: 2rem);
+                }
+
+                .info-details {
+                    p {
+                        color: $heading-color;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            .devider {
+                height: 16.4rem;
+                width: 1px;
+                background: $heading-color;
+            }
+        }
+
+        // hotels-section
+        .allhotels-section {
+            .booking-table {
+                .table-main {
+                    th:nth-child(1) {
+                        padding: 2rem 3rem;
+                    }
+                }
+            }
+        }
+        // hotel-info
+        .contact-form {
+            padding: 0 0 0 4rem;
+            margin-top: 0;
+        }
+
+        .hotel-info-section {
+            .form-items {
+                &:not(:last-child) {
+                    margin-bottom: 4rem;
+                }
+            }
+            .form-title {
+                padding-bottom: 2.5rem;
+                font-weight: 500;
+                border-bottom: 1px solid rgba($color: $theme-one, $alpha: 0.18);
+            }
+            .input-top {
+                margin-top: 3rem;
+            }
+
+            .input-checkbox {
+                @include flex($gap: 6.2rem);
+                flex-wrap: wrap;
+                row-gap: 2.5rem;
+
+                .form-item {
+                    @include flex($gap: 1rem);
+                    width: auto;
+
+                    label {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .uplode-thumb-main {
+                height: 11rem;
+                width: 290px;
+                padding: 20px;
+                border: 1px dashed $theme-one;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 20px;
+                margin-top: 8px;
+                border-radius: 2rem;
+                position: relative;
+
+                .inner-text {
+                    color: $theme-one;
+                }
+                .input-item {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+            }
+            .vedio-thumb-main {
+                height: 31.4rem;
+                width: 100%;
+            }
+
+            .input-vedio {
+                .form-item {
+                    width: auto;
+                }
+            }
+            .uplode-vedio-item {
+                height: 11rem;
+                width: 11rem;
+                border-radius: 2rem;
+                position: relative;
+                border: 1px solid $theme-one;
+                @include flex($justify: center);
+                margin-top: 4rem;
+
+                .uplode-vedio {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+            }
+            .primary-btn {
+                margin-top: 2rem;
+            }
+        }
+
+        // purchase
+        .purchase-section {
+            .booking-table {
+                .table-main {
+                    .p-data {
+                        padding: 3rem 2rem;
+                    }
+                    .p-wrapper {
+                        width: auto;
+                    }
+                }
+                .modal-wrapper.active {
+                    background: transparent !important;
+                }
+            }
+
+            .invoice-main {
+                .table-main {
+                    th {
+                        background-color: $color-white;
+                    }
+                    .p-row{
+                        border-top: 1px solid #EAF1FF;
+                        border-bottom: 1px solid #EAF1FF;
+                    }
+
+                    .p-heading,.p-data{
+                        padding: 2rem 8rem;
+                        text-align: start;
+                    }
+                }
+            }
+        }
+
+        .review-section {
+            .booking-table {
+                .table-main {
+                    th {
+                        border-radius: 1rem;
+                    }
+                    .p-data {
+                        padding: 3rem;
+                    }
+
+                    .p-wrapper {
+                        align-items: flex-start;
+                        gap: 2.7rem;
+                        h5 {
+                            font-family: $outfit;
+                            font-weight: 400;
+                        }
+                    }
+                    .wrapper-img {
+                        width: 6.4rem;
+                        height: 6.4rem;
+                    }
+                    .wrapper-item {
+                        flex: 1 1 0%;
+                        .wrapper-date {
+                            font-size: 1.4rem;
+                        }
+                        .wrapper-review {
+                            display: inline-flex;
+                            gap: 1rem;
+                            margin: 1rem 0 2.2rem 0;
+                            font-size: 1.4rem;
+                            color: $paragraph-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .massage-section {
+            background: $color-white;
+            border-radius: 1rem;
+            @include flex($align: flex-start);
+            .massages {
+                border-right: 1px solid $dark-white;
+
+                .title {
+                    font-size: 1.6rem;
+                    font-family: $outfit;
+                    font-weight: 500;
+                }
+
+                .section-head {
+                    padding: 2rem;
+                    display: block;
+                }
+
+                .search-box {
+                    @include flex($gap: 1rem);
+                    width: 27rem;
+                    height: 4.2rem;
+                    background: $dark-white;
+                    padding: 1.3rem 1rem;
+                    border-radius: 0.8rem;
+                    font-size: 1.4rem;
+                    margin-top: 1rem;
+                }
+
+                .message-head {
+                    padding: 0 2rem 2rem 2rem;
+                    @include flex($justify: space-between);
+                    border-bottom: 1px solid $dark-white;
+                }
+            }
+            .m-wrapper {
+                padding: 1.6rem 2rem;
+                @include flex($justify: space-between, $align: flex-start);
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $dark-white;
+                }
+
+                .wrapper-item {
+                    @include flex($gap: 2rem);
+                }
+                p {
+                    font-size: 1.4rem;
+                }
+                h5 {
+                    font-size: 1.6rem;
+                    font-family: $outfit;
+                    font-weight: 500;
+                }
+
+                &:hover {
+                    background: $dark-white;
+                }
+            }
+
+            .chat-box {
+                width: 100%;
+            }
+            .chat-top {
+                padding: 3rem;
+                border-bottom: 1px solid $dark-white;
+
+                .m-wrapper {
+                    padding: 0;
+                    .wrapper-item {
+                        gap: 3rem;
+                    }
+                    &:hover {
+                        background: unset;
+                    }
+                }
+            }
+            .chat-main {
+                padding: 3rem;
+
+                .chat-detail {
+                    &:not(:last-child) {
+                        margin-bottom: 4rem;
+                    }
+                }
+                .chat-wrapper {
+                    @include flex($justify: flex-end, $gap: 1.2rem);
+                    &:not(:last-child) {
+                        margin-bottom: 2rem;
+                    }
+                    .c-detail {
+                        padding: 1rem;
+                        border-radius: 1rem 0 1rem 1rem;
+                        background: $theme-one;
+                        color: $color-white;
+                    }
+                }
+
+                .chat-item {
+                    margin-bottom: 5rem;
+                }
+            }
+            .chat-send-box {
+                @include flex($gap: 2rem);
+                padding: 0 3rem 3rem 3rem;
+
+                .typebox {
+                    flex: 1;
+                    @include flex($justify: space-between);
+                    padding: 2rem 3rem;
+                    border: 1px solid $dark-white;
+                    border-radius: 50rem;
+                    height: 5.6rem;
+                    background: $dark-white;
+                }
+                input {
+                    font-size: 1.6rem;
+                }
+                .attachments {
+                    @include flex($gap: 1.5rem);
+                }
+            }
+        }
+        // editprofile----------------------->
+        .eprofile-section {
+            .uplode-thumb-main {
+                height: 20rem;
+                width: 20rem;
+                text-align: center;
+            }
+            .uplode-thumb-two {
+                width: 60rem;
+                height: 20rem;
+            }
+
+            .uplode-thumb-three {
+                height: 5.6rem;
+                width: 5.6rem;
+                border-radius: 50%;
+            }
+            .primary-btn {
+                padding: 2.2rem 12.7rem;
+            }
+        }
+
+        .c-form {
+            padding-left: 6rem;
+
+            .edit-password {
+                padding: 8rem;
+                background: $color-white;
+
+                .g-4 {
+                    --bs-gutter-x: 6rem;
+                }
+                .form-title {
+                    font-weight: 500;
+                    margin-bottom: 1rem;
+                }
+                .form-btn {
+                    @include flex($gap: 2rem);
+                }
+                .btn-cancel {
+                    border: 1px solid $theme-three;
+                    background: transparent;
+                    color: $theme-three;
+                    &::after {
+                        display: none;
+                    }
+                    svg {
+                        stroke: $theme-three;
+                        fill: none;
+                    }
+                }
+            }
+        }
+    }
+}
