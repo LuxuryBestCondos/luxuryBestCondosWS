@@ -206,6 +206,109 @@
     </header>
 
 
+    <!-- ticket-modal -->
+    <div class="modal-wrapper ticket">
+        <div onclick="modalAction('.ticket')" class="anywhere-away"></div>
+
+        <!-- change this -->
+        <div class="login-section account-section modal-main">
+            <div class="contact-form">
+                <div class="section-head">
+                    <div class="section-title">
+                        <h3 class="title">Log in</h3>
+                        <p class="section-detail">Welcome to Hotelsun</p>
+                    </div>
+                    <span class="close-btn" onclick="modalAction('.ticket')">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="16" cy="16" r="16" fill="#FF385C" />
+                            <path d="M22.2188 9.77734L8.88614 23.1107" stroke="white" stroke-width="1.8"
+                                stroke-linecap="round" />
+                            <path d="M22.2188 23.1099L8.88614 9.77654" stroke="white" stroke-width="1.8"
+                                stroke-linecap="round" />
+                        </svg>
+                    </span>
+                </div>
+                <div class="form-section">
+                    <div class="form-input">
+                        <div class="form-item">
+                            <label for="faqname">Name*</label>
+                            <input type="text" class="faqname form-control" id="faqname" placeholder="Name Here" />
+                        </div>
+                        <div class="form-item">
+                            <label for="password">Password*</label>
+                            <input type="password" class="password form-control" id="password" placeholder="******" />
+                        </div>
+                    </div>
+                    <div class="form-input forget-pass">
+                        <div class="form-item remember">
+                            <input type="checkbox" class="input-check" id="remember" />
+                            <label for="remember">Remeber Me</label>
+                        </div>
+                        <div class="form-item">
+                            <a href="#" class="forget text-end">Forget Password</a>
+                        </div>
+                    </div>
+                    <div class="form-input">
+                        <a href="./dashboard.html" class="primary-btn">
+                            <span>Login</span>
+                            <span>
+                                <svg width="7" height="15" viewBox="0 0 7 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.25 10.5L5.04289 6.70711C5.37623 6.37377 5.54289 6.20711 5.54289 6C5.54289 5.79289 5.37623 5.62623 5.04289 5.29289L1.25 1.5"
+                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <h4 class="option">OR</h4>
+                    <div class="wrapper-social">
+                        <div class="social-item">
+                            <a href="#" class="icon-box">
+                                <span class="social-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 12H22" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M20 14L20 10" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M8.5 12H15C15 15.5899 12.0899 18.5 8.5 18.5C4.91015 18.5 2 15.5899 2 12C2 8.41015 4.91015 5.5 8.5 5.5C10.2949 5.5 11.9199 6.22754 13.0962 7.40381"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                            </a>
+                            <a href="#" class="icon-box">
+                                <span class="social-icon">
+                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1" width="20" height="20" rx="4" stroke="currentColor"
+                                            stroke-width="1.5" />
+                                        <circle cx="17" cy="5" r="1" fill="currentColor" stroke="currentColor"
+                                            stroke-width="1.5" />
+                                        <circle cx="11" cy="11" r="5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </span>
+                            </a>
+                            <a href="#" class="icon-box">
+                                <span class="social-icon">
+                                    <svg width="22" height="21" viewBox="0 0 22 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M21 16C19.8979 16 19.1559 16 18.6353 16.5886C18.0274 17.2761 17.3562 18 16.4384 18H15.6667C15.2339 18 14.8129 18.1404 14.4667 18.4L13.4 19.2C11.9778 20.2667 10.0222 20.2667 8.60001 19.2L7.53333 18.4C7.18714 18.1404 6.76608 18 6.33334 18L5.56154 18C4.64381 18 3.97263 17.2761 3.36467 16.5886C2.84415 16 2.10208 16 1 16L3.39999 14.2C4.40722 13.4446 5 12.259 5 11V10.5L4.49999 10.5C3.67157 10.5 3 9.82843 3 9C3 8.17158 3.67158 7.5 4.50001 7.5H5V7.00001C5 3.6863 7.6863 1 11 1.00001C14.3137 1.00001 17 3.6863 17 7.00001V7.5H17.5C18.3284 7.5 19 8.17158 19 9C19 9.82843 18.3284 10.5 17.5 10.5L17 10.5V11C17 12.259 17.5928 13.4446 18.6 14.2L21 16Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                        <span class="account">Dont’t have an aceount ? <a href="#">Create Account</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- change this -->
+    </div>
 
     <!---------------------- hero-section ---------------------->
     <!-- <section class="c-hero" style="background: url(./assets/img/background/customer-bg-2.webp) no-repeat center / cover">
@@ -244,20 +347,20 @@
                                     <div class="swiper hotel-swiper2">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <img src="./assets/img/elle-residences/elle.png" alt="img" />
+                                                <img src="./assets/img/icon-beach-hollywood/Related-Diplomat-02-Heroshot_Day-01.png" alt="img" />
                                             </div>
                                             <div class="swiper-slide">
-                                                <img src="./assets/img/elle-residences/elle1.png" alt="img" />
+                                                <img src="./assets/img/icon-beach-hollywood/Related-Diplomat-02-PoolDeck_Cinema-01.png" alt="img" />
                                             </div>
                                             <div class="swiper-slide">
-                                                <img src="./assets/img/elle-residences/elle2.jpg"  alt="img" />
+                                                <img src="./assets/img/icon-beach-hollywood/Related-Diplomat-03-Dropoff__Residence-02.png"  alt="img" />
                                             </div>
                                             <div class="swiper-slide">
-                                                <img src="./assets/img/elle-residences/elle3.png" alt="img" />
+                                                <img src="./assets/img/icon-beach-hollywood/Related-Diplomat-04-Hummingbird_Sunrise-01.png" alt="img"" />
                                             </div>
-                                            <div class="swiper-slide">
-                                                <img src="./assets/img/elle-residences/elle4.png" alt="img" />
-                                            </div>
+                                            <!-- <div class="swiper-slide">
+                                                <img src="./assets/img/one-hollywood-residences/Entrance.jpg" alt="img" />
+                                            </div> -->
                                         </div>
                                     </div>
 
@@ -265,29 +368,29 @@
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <div class="swiper-img">
-                                                    <img src="./assets/img/elle-residences/elle.png" alt="img" />
+                                                    <img src="./assets/img/icon-beach-hollywood/Related-Diplomat-02-Heroshot_Day-01.png" alt="img" />
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="swiper-img">
-                                                    <img src="./assets/img/elle-residences/elle1.png" alt="img" />
+                                                    <img src="./assets/img/icon-beach-hollywood/Related-Diplomat-02-PoolDeck_Cinema-01.png" alt="img" />
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="swiper-img">
-                                                    <img src="./assets/img/elle-residences/elle2.jpg" alt="img" />
+                                                    <img src="./assets/img/icon-beach-hollywood/Related-Diplomat-03-Dropoff__Residence-02.png" alt="img" />
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="swiper-img">
-                                                    <img src="./assets/img/elle-residences/elle3.png" alt="img" />
+                                                    <img src="./assets/img/icon-beach-hollywood/Related-Diplomat-04-Hummingbird_Sunrise-01.png" alt="img" />
                                                 </div>
                                             </div>
-                                            <div class="swiper-slide">
+                                            <!-- <div class="swiper-slide">
                                                 <div class="swiper-img">
-                                                    <img src="./assets/img/elle-residences/elle4.png" alt="img" />
+                                                    <img src="./assets/img/one-hollywood-residences/Entrance.jpg" alt="img" />
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -302,7 +405,7 @@
                                 </div>
                                 <div class="wrapper-item">
                                     <div class="wrapper-content">
-                                        <h3 class="wrapper-detail">Elle Residences</h3>
+                                        <h3 class="wrapper-detail">Icon Beach Hollywood</h3>
                                         <div class="wrapper-review">
                                             <div class="wrapper-list">
                                                 <div class="list-item">
@@ -317,7 +420,7 @@
                                                                 stroke="currentColor"></path>
                                                         </svg>
                                                     </span>
-                                                    <p class="list-text">Edgewater</p>
+                                                    <p class="list-text">South Florida</p>
                                                 </div>
                                                 <div class="list-item">
                                                     <span>
@@ -358,7 +461,7 @@
                                         </div>
                                     </div>
                                     <h4 class="wrapper-price">
-                                        <span class="price">$4.000</span>
+                                        <span class="price">$850.000</span>
                                         <span class="price-text">Start from</span>
                                     </h4>
                                 </div>
@@ -387,10 +490,25 @@
                                         data-bs-parent="#accordionFlushExample">
                                         <div class="accordion-body">
                                             <p class="accordion-detail">
-                                               Elle Residences.
+                                                One Hollywood Residences offers an extraordinary opportunity for
+                                                thosedesiring an opulentlifestyle in the vibrant core of
+                                                downtownHollywood. This distinguished residential complexmasterfully
+                                                combines contemporary architecture with refinedamenities, ensuring a
+                                                living experience marked by unrivaled comfort and convenience. The
+                                                gracefully curved,wrap-around balconies provide breathtaking
+                                                panoramicvistas, from the bustling cityscape to the tranquilshores,
+                                                seamlessly integrating indoor and outdoor living spaces.
                                             </p>
                                             <p class="accordion-detail">
 
+                                                With its modern lines set against the backdrop of historic charm,
+                                                One Hollywood createsmany distinctive possibilities for residents to
+                                                enjoy, from easy accessto the city’s entertainment, dining, and
+                                                culturalscenes to a host of curated amenities within.
+    
+                                                One Hollywood Residences presents a unique opportunity to own in one of
+                                                South Florida’smost sought-after and rapidlygrowing locales, from the
+                                                low $400s.
                                             </p>
                                             <a href="#" class="accordion-btn">
                                                 <span> Show More </span>
@@ -770,7 +888,7 @@
                                             </p>
 
                                             <div class="accordion-intro"
-                                                style="background: url(./assets/img/elle-residences/elle.png) no-repeat center / cover">
+                                                style="background: url(./assets/img/icon-beach-hollywood/Related-Diplomat-02-PoolDeck_Cinema-01.png) no-repeat center / cover">
                                                 <div class="wrapper-vedio">
                                                     <div class="video-main">
                                                         <a href="https://www.youtube.com/watch?v=BqI0Q7e4kbk"
