@@ -29,6 +29,17 @@
 
     <!---------------------- Custom-Css ---------------------->
     <link rel="stylesheet" href="./css/main.css" />
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "lVyCDQ9DHd_qcvKJv",
+      });
+   })();
+</script>
 </head>
 
 <body>
@@ -1274,7 +1285,7 @@
                                                         </span>
                                                     </div>
                                                     <div class="contact-content">
-                                                        <a href="#" class="list-text">+88 (012)083 88</a>
+                                                        <a href="#" class="list-text">+1 (212) 555-4321</a>
                                                     </div>
                                                 </div>
                                                 <div class="contact-box">
@@ -1312,38 +1323,58 @@
                                             </div>
                                         </div>
                                         <div class="contact-form">
-                                            <div class="form-section">
+                                            <form id="contact-form">
                                                 <div class="form-input">
-                                                    <div class="form-item">
-                                                        <input type="text" class="name form-control" id="wname"
-                                                            placeholder="Name Here" />
-                                                    </div>
+                                                    <label for="wname">Name:</label>
+                                                    <input type="text" id="wname" name="name" class="form-control" placeholder="Name Here" required />
                                                 </div>
                                                 <div class="form-input">
-                                                    <div class="form-item">
-                                                        <input type="email" class="name form-control" id="wemail"
-                                                            placeholder="Email" />
-                                                    </div>
+                                                    <label for="wemail">Email:</label>
+                                                    <input type="email" id="wemail" name="email" class="form-control" placeholder="Email" required />
                                                 </div>
                                                 <div class="form-input">
-                                                    <div class="form-item">
-                                                        <input type="tel" class="name form-control" id="wphone"
-                                                            placeholder="Phone Number" />
-                                                    </div>
+                                                    <label for="wphone">Phone Number:</label>
+                                                    <input type="tel" id="wphone" name="phone" class="form-control" placeholder="Phone Number" />
                                                 </div>
                                                 <div class="form-input">
-                                                    <div class="form-item">
-                                                        <textarea placeholder="Description" rows="8"></textarea>
-                                                    </div>
+                                                    <label for="wdescription">Description:</label>
+                                                    <textarea id="wdescription" name="description" class="form-control" placeholder="Description" rows="8" required></textarea>
                                                 </div>
                                                 <div class="form-input">
-                                                    <a href="#" class="primary-btn">
-                                                        <span>Send Message</span>
-                                                    </a>
+                                                    <button type="submit" class="primary-btn">Send Message</button>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </form>
                                     </div>
+
+                                    <script>
+                                        // Enviar el formulario usando EmailJS
+                                        document.getElementById('contact-form').addEventListener('submit', function(event) {
+                                            event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+                                            
+                                            // Captura los datos del formulario
+                                            const params = {
+                                                name: document.getElementById('wname').value,
+                                                email: document.getElementById('wemail').value,
+                                                phone: document.getElementById('wphone').value,
+                                                description: document.getElementById('wdescription').value
+                                            };
+                                
+                                            // IDs de EmailJS
+                                            const serviceID = 'service_un9an71'; // Reemplaza con tu Service ID
+                                            const templateID = 'template_vv1thr7'; // Reemplaza con tu Template ID
+                                
+                                            // Envía el correo usando EmailJS
+                                            emailjs.send(serviceID, templateID, params)
+                                                .then((response) => {
+                                                    alert('¡Mensaje enviado exitosamente!');
+                                                    console.log('Éxito:', response.status, response.text);
+                                                })
+                                                .catch((error) => {
+                                                    alert('Hubo un error al enviar el mensaje.');
+                                                    console.error('Error:', error);
+                                                });
+                                        });
+                                    </script>
                                 </div>
                             </div>
                             <div class="col-lg-12">

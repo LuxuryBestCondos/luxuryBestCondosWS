@@ -33,6 +33,28 @@
 
         <!---------------------- Custom-Css ---------------------->
         <link rel="stylesheet" href="./css/main.css" />
+
+        <script src="js/faq.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+        <script>
+            // Configuración de Firebase
+            const firebaseConfig = {
+  apiKey: "AIzaSyBZjrbN7Og13JQDem-YZMeYakzTGikhkx4",
+  authDomain: "lbcdb-b18df.firebaseapp.com",
+  databaseURL: "https://lbcdb-b18df-default-rtdb.firebaseio.com/",
+  projectId: "lbcdb-b18df",
+  storageBucket: "lbcdb-b18df.firebasestorage.app",
+  messagingSenderId: "454429881695",
+  appId: "1:454429881695:web:1744fc503991c250a672ea"
+};
+
+    
+            // Inicializar Firebase
+            firebase.initializeApp(firebaseConfig);
+            const database = firebase.database();
+        </script>
     </head>
     <body>
         <script src="js/translations.js"></script>
@@ -632,7 +654,7 @@
                                     </div>
                                 </div>
                                 <div class="form-input">
-                                    <a href="#" class="primary-btn">
+                                    <button type="button" onclick="submitFAQ()" class="primary-btn">
                                         <span>Send Message</span>
                                         <span>
                                             <svg width="7" height="15" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -644,7 +666,7 @@
                                                 />
                                             </svg>
                                         </span>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
