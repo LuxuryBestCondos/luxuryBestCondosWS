@@ -6,6 +6,8 @@
     <link rel="icon" class="favicon" href="./assets/img/logo/Logo BLC - Vertical.svg">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
+    
+
 
     <title>Luxury Best Condos</title>
     <style>
@@ -372,6 +374,98 @@
             background-color: #555;
         }
 
+        .carousel-item {
+            position: relative;
+            min-width: 300px;
+            flex: 0 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .carousel-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .image-wrapper:hover img {
+            transform: scale(1.1);
+        }
+
+        .details {
+            padding: 15px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .details h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .details p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .carousel-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .carousel-item a:hover .details h3 {
+            color: #007BFF;
+        }
+
+        .suggestions-list {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        max-width: 300px;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    .suggestions-list li {
+        padding: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+        color: black; /* Cambiado a negro */
+    }
+
+    .suggestions-list li:last-child {
+        border-bottom: none;
+    }
+
+    .suggestions-list li:hover {
+        background-color: #f0f0f0;
+    }
+
   
     </style>
 </head>
@@ -410,9 +504,17 @@
             <p>This is the ultimate platform to find your perfect luxury apartment</p>
             <br>
             <div class="hero-search">
-                <form action="#" method="GET">
-                    <input type="text" name="search" placeholder="Search for apartments, neighborhoods..." class="search-input">
+                <form action="#" method="GET" onsubmit="return handleSearchSubmit(event)">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        name="search" 
+                        placeholder="Search for neighborhoods..." 
+                        class="search-input" 
+                        oninput="showSuggestions(event)"
+                    >
                     <button type="submit" class="search-button">Search</button>
+                    <ul id="suggestionsList" class="suggestions-list"></ul>
                 </form>
             </div>
         </div>
@@ -493,30 +595,42 @@
         <h2>Neighborhoods</h2>
         <div class="carousel" id="neighborhoodCarousel">
             <div class="carousel-item">
-                <img src="./assets/img/continuum-outside-broker/Dining Trellis Pavilion.png" alt="Neighborhood">
+                <a href="./projects.html?neighborhood=icon-beach-hollywood">
+                    <div class="image-wrapper">
+                        <img src="./assets/img/continuum-outside-broker/Dining Trellis Pavilion.png" alt="Neighborhood">
+                    </div>
+                </a>
                 <div class="details">
-                    <h3>North Bay Village</h3>
+                    <h3>Icon Beach Hollywood</h3>
                     <p>4 Projects | Starting at $855,000</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./assets/img/icon-beach-hollywood/exterior/Related-Diplomat-02-Heroshot_Day-01_CMYK.png" alt="Neighborhood">
+                <a href="./projects.html?neighborhood=continumm-club">
+                    <div class="image-wrapper">
+                        <img src="./assets/img/icon-beach-hollywood/exterior/Related-Diplomat-02-Heroshot_Day-01_CMYK.png" alt="Neighborhood">
+                    </div>
+                </a>
                 <div class="details">
-                    <h3>Brickell Key</h3>
+                    <h3>Continumm Club</h3>
                     <p>7 Projects | Starting at $1,200,000</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./assets/img/Regis Residences Bahia Mar Fort Lauderdale/image 4.png" alt="Neighborhood">
+                <a href="./projects.html?neighborhood=regis-residences">
+                    <div class="image-wrapper">
+                        <img src="./assets/img/Regis Residences Bahia Mar Fort Lauderdale/image 4.png" alt="Neighborhood">
+                    </div>
+                </a>
                 <div class="details">
-                    <h3>Sunny Isles</h3>
+                    <h3>Regis Residences</h3>
                     <p>5 Projects | Starting at $900,000</p>
                 </div>
             </div>
         </div>
         <div class="carousel-controls">
-            <button onclick="scrollCarouselID('neighborhoodCarousel', -300)">&larr; Prev</button>
-            <button onclick="scrollCarouselID('neighborhoodCarousel', 300)">Next &rarr;</button>
+            <button onclick="scrollCarousel('neighborhoodCarousel', -300)">&larr; Prev</button>
+            <button onclick="scrollCarousel('neighborhoodCarousel', 300)">Next &rarr;</button>
         </div>
     </section>
     
@@ -567,5 +681,45 @@
             newDevelopments.style.backgroundImage = `url('${imageUrl}')`;
         }
     </script>
+
+<script>
+    const neighborhoods = [
+        { name: "Icon Beach Hollywood", url: "./projects.html?neighborhood=icon-beach-hollywood" },
+        { name: "Continumm Club", url: "./projects.html?neighborhood=continumm-club" },
+        { name: "Regis Residences", url: "./projects.html?neighborhood=regis-residences" }
+    ];
+
+    function showSuggestions(event) {
+        const input = event.target.value.toLowerCase();
+        const suggestionsList = document.getElementById('suggestionsList');
+        suggestionsList.innerHTML = '';
+
+        if (input) {
+            const matches = neighborhoods.filter(n => n.name.toLowerCase().includes(input));
+            matches.forEach(match => {
+                const li = document.createElement('li');
+                li.textContent = match.name;
+                li.onclick = () => {
+                    document.getElementById('searchInput').value = match.name;
+                    suggestionsList.innerHTML = '';
+                    window.location.href = match.url;
+                };
+                suggestionsList.appendChild(li);
+            });
+        }
+    }
+
+    function handleSearchSubmit(event) {
+        event.preventDefault();
+        const inputValue = document.getElementById('searchInput').value.toLowerCase();
+        const match = neighborhoods.find(n => n.name.toLowerCase() === inputValue);
+
+        if (match) {
+            window.location.href = match.url;
+        } else {
+            alert('Neighborhood not found. Please select from the list.');
+        }
+    }
+</script>
 </body>
 </html>
